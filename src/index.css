@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400..700&family=Satisfy&display=swap');
+
+
+:root {
+  --size: 80px;
+  --tile: #006aff;
+  --correct: #00ff00;
+  --warning: #ff0000;
+  --overlay: #55ab9f;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+
+}
+
+.App * {
+  font-family: 'Amatic SC', sans-serif;
+  font-weight: bolder;
+}
+
+.heading {
+  font-size: 3rem;
+}

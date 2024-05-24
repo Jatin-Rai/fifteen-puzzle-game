@@ -1,0 +1,24 @@
+.message {
+    position: fixed;
+    top: -100px;
+    right: 35rem;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--warning);
+    font-size: large;
+    margin-bottom: 10px;
+    z-index: 50;
+    animation: slide-down 0.5s forwards;
+}
+
+@keyframes slide-down {
+    0% {
+        top: -100px;
+        opacity: 0;
+    }
+    100% {
+        top: 5.5rem;
+        opacity: 1;
+    }
+}

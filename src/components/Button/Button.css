@@ -1,0 +1,20 @@
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+button {
+    border: 0 transparent;
+    background-color: var(--tile);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--overlay);
+}

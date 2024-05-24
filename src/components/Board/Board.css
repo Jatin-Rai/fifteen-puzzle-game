@@ -1,0 +1,28 @@
+.game {
+    position: relative;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, var(--size));
+    grid-template-rows: repeat(4, var(--size));
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 10px solid var(--overlay);
+    margin-top: 10px;
+}
+
+.button-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.moves {
+    padding: 0 20px;
+    font-size: x-large;
+    font-weight: bolder;
+    text-align: center;
+}
+
