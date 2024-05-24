@@ -1,0 +1,39 @@
+/* Instruction.css */
+.instruction {
+    position: absolute;
+    top: 7rem;
+    right: 7rem;
+    width: 250px;
+    padding: 15px;
+    margin: 20px;
+    background: #f5deb3;
+    border: 1px solid #d2b48c;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    color: #5a4b3e;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.instruction h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.instruction p {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.instruction::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid #d2b48c;
+    pointer-events: none;
+}

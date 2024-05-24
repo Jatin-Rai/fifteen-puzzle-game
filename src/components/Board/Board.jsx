@@ -43,22 +43,19 @@ const Board = () => {
 
     const helpMe = () => {
         const i16 = numbers.find(n => n.value === 16).index;
-        const row = Math.floor(i16 / 4); // Get the row index of the empty tile
-    
-        // Define adjacent tiles excluding those that would result in moving to the next row
+        const row = Math.floor(i16 / 4);
+
         const adjacentTiles = [
             numbers.find(n => n.index === i16 - 1 && Math.floor((n.index) / 4) === row),
             numbers.find(n => n.index === i16 + 1 && Math.floor((n.index) / 4) === row),
             numbers.find(n => n.index === i16 - 4),
-            numbers.find(n => n.index === i16 + 4) 
+            numbers.find(n => n.index === i16 + 4)
         ].filter(tile => tile);
-    
+
         const randomTile = adjacentTiles[Math.floor(Math.random() * adjacentTiles.length)];
-    
+
         moveTile(randomTile);
     };
-    
-    
 
     const handleKeyDown = e => {
         const i16 = numbers.find(n => n.value === 16).index;
@@ -81,8 +78,8 @@ const Board = () => {
 
     return (
         <div className="game">
-            {!solvable && <Message message="Not solvable! Shuffle again." />}
-                <div className="moves">Moves: {moves}</div>
+            {!solvable && <Message message="Not solvable! Click on Shuffle to shuffle the grid" />}
+            <div className="moves">Moves: {moves}</div>
             <div className="board">
                 <Overlay size={16} />
                 {numbers.map((x, i) => {
