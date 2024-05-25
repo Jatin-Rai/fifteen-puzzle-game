@@ -1,4 +1,6 @@
 import "./Instruction.css";
+
+// Instruction component to display game instructions to the user
 const Instruction = () => {
     return (
         <div className='instruction'>
@@ -13,4 +15,4 @@ const Instruction = () => {
     )
 }
 
-export default Instruction
+export default Instruction;

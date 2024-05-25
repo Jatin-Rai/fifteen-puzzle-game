@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+
 import './Board.css';
+
 import Overlay from "../Overlay/Overlay";
 import Tile from "../Tile/Tile";
 import Winner from "../Winner/Winner";
 import Button from "../Button/Button.jsx";
-import { shuffle, isSolvable } from "../../utils/utils.js";
 import Message from "../Message/Message.jsx";
+
+import { shuffle, isSolvable } from "../../utils/utils.js";
 
 const Board = () => {
     const [numbers, setNumbers] = useState([]);
@@ -13,6 +16,7 @@ const Board = () => {
     const [solvable, setSolvable] = useState(true);
     const [moves, setMoves] = useState(0);
 
+    // Function to initialize and reset the puzzle board
     const reset = () => {
         const newNumbers = shuffle();
         setNumbers(newNumbers);
@@ -20,6 +24,7 @@ const Board = () => {
         setMoves(0);
     };
 
+    // Function to move a tile if it is adjacent to the empty space (16)
     const moveTile = tile => {
         const i16 = numbers.find(n => n.value === 16).index;
         if (![i16 - 1, i16 + 1, i16 - 4, i16 + 4].includes(tile.index) || animating)
@@ -41,6 +46,7 @@ const Board = () => {
         setTimeout(() => setAnimating(false), 200);
     };
 
+    // Function to move a random adjacent tile to the empty space (16) as a hint
     const helpMe = () => {
         const i16 = numbers.find(n => n.value === 16).index;
         const row = Math.floor(i16 / 4);
@@ -57,6 +63,7 @@ const Board = () => {
         moveTile(randomTile);
     };
 
+    // Function to handle arrow key inputs for moving tiles
     const handleKeyDown = e => {
         const i16 = numbers.find(n => n.value === 16).index;
         if (e.keyCode === 37 && !(i16 % 4 === 3))
@@ -69,11 +76,13 @@ const Board = () => {
             moveTile(numbers.find(n => n.index === i16 - 4));
     };
 
+    // Effect to add and clean up the keydown event listener
     useEffect(() => {
         document.addEventListener('keydown', handleKeyDown);
         return () => { document.removeEventListener('keydown', handleKeyDown) };
     });
 
+    // Effect to initialize the puzzle on component mount
     useEffect(reset, []);
 
     return (
